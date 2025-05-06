@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -37,6 +39,12 @@ public class PersonaController {
     public Persona getbyId(@PathVariable int id) {
         return personaService.buscarporid(id);
     }
+
+    @GetMapping("/rut={rut}")
+    public Persona getPorRut(@PathVariable String rut) {
+        return personaService.buscarporRut(rut);
+    }
+    
     
 
     @PostMapping

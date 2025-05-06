@@ -13,7 +13,8 @@ public class PersonaService {
     @Autowired
     private PersonaRepository personaRepository;
 
-    public Persona guardar(Persona persona){
+    public Persona guardar(Persona persona)
+    {
         return personaRepository.create(persona);
        
     }
@@ -23,9 +24,9 @@ public class PersonaService {
         return personaRepository.readAll();
     }
 
-    public Persona buscarporid(int id) {
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'buscarporid'");
+    public Persona buscarporid(int id) 
+    {
+        
         return personaRepository.read(id);
     }
 
@@ -39,5 +40,10 @@ public class PersonaService {
     {
         personaRepository.delete(id);
         return "Persona eliminada";
+    }
+
+    public Persona buscarporRut(String rut) 
+    {
+       return personaRepository.readRut(rut);
     }
 }

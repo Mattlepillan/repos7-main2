@@ -12,7 +12,7 @@ public class PersonaRepository {
     private List<Persona> personas=new ArrayList<>();
 
 
-    //NO TIENE NADA QUE VER CON MS ES SOLO PRUEBA
+    //NO TIENE NADA QUE VER CON MS ES SOLO DE PRUEBA
     public PersonaRepository()
     {
         personas.add(new Persona(1, "12.345.678-9", "Juan", "Pérez", 30));
@@ -67,6 +67,15 @@ public class PersonaRepository {
         }
 
 
+        return null;
+    }
+
+    public Persona readRut(String rut) {
+        for (Persona p : personas) {
+            if(p.getRut().equals(rut)){
+                return p;
+            }
+        }
         return null;
     }
 }
